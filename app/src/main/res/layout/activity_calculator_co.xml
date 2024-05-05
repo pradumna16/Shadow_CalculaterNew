@@ -5,11 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Calculator_Co">
+    <TextView
+        android:paddingTop="24sp"
+        android:id="@+id/textView1"
+        android:textColor="#191970"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Calculator"
+        android:textSize="45sp"
+        android:gravity="center"
+        android:textStyle="bold|italic"/>
+
 
     <RelativeLayout
+        android:layout_below="@+id/textView1"
         android:id="@+id/Relativeid"
-        android:layout_margin="12dp"
+        android:background="#9000FFFF"
+        android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:orientation="vertical"
@@ -19,10 +33,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Number"
+            android:textStyle="bold"
             android:textSize="24sp"
             android:inputType="number"/>
         <EditText
             android:id="@+id/input2"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/input1"
@@ -31,52 +47,88 @@
             android:inputType="number"/>
 
     </RelativeLayout>
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Linear1"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:background="#8000008B"
+        android:layout_height="200dp"
         android:layout_below="@id/Relativeid"
         android:orientation="horizontal">
+
         <Button
-            android:text="+"
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
             android:id="@+id/btnadd"
-            android:layout_weight="0.03" />
+            android:layout_width="105dp"
+            android:layout_height="79dp"
+            android:layout_weight="0.03"
+            android:textSize="34dp"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="@+id/btndiv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
 
         <Button
-            android:text="-"
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
             android:id="@+id/btnsub"
-            android:layout_weight="0.03" />
+            android:layout_width="105dp"
+            android:layout_height="79dp"
+            android:layout_weight="0.03"
+            android:text="-"
+            android:textSize="34dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.132" />
 
         <Button
-            android:text="*"
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
             android:id="@+id/btnmul"
-            android:layout_weight="0.03"/>
+            android:layout_width="105dp"
+            android:layout_height="79dp"
+            android:layout_weight="0.03"
+            android:text="*"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.876" />
 
         <Button
-            android:text="/"
-            android:layout_height="wrap_content"
             android:id="@+id/btndiv"
-            android:layout_width="78dp"
-            android:layout_weight="0.03" />
+            android:layout_width="105dp"
+            android:layout_height="79dp"
+            android:layout_weight="0.03"
+            android:text="/"
+            android:textSize="34dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.867" />
 
         <Button
-            android:text="Clear"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
             android:id="@+id/btnclr"
-            android:layout_weight="0.03" />
-    </LinearLayout>
+            android:layout_width="109dp"
+            android:layout_height="133dp"
+            android:layout_weight="0.03"
+            android:textSize="24sp"
+            android:text="Clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.897"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
+        android:layout_margin="15dp"
         android:id="@+id/textViewresult"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_below="@id/Linear1"
+        android:textStyle="bold"
         android:hint="Display here"
         android:textColorHint="#80000080"
         android:textSize="21dp"
